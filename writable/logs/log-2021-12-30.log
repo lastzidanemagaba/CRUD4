@@ -58,3 +58,39 @@ CRITICAL - 2021-12-30 19:10:35 --> Undefined property: stdClass::$product_name
 #8 D:\xampp\htdocs\CI4CRUD\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 D:\xampp\htdocs\CI4CRUD\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
 #10 {main}
+CRITICAL - 2021-12-30 20:51:27 --> move_uploaded_file(/uploads/1640919087-Screenshot_2.png): Failed to open stream: No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'move_uploaded_f...', 'D:\\xampp\\htdocs...', 59)
+#1 D:\xampp\htdocs\CI4CRUD\app\Controllers\Product.php(59): move_uploaded_file('D:\\xampp\\tmp\\ph...', '/uploads/164091...')
+#2 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(824): App\Controllers\Product->uploada()
+#3 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#4 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\CI4CRUD\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 D:\xampp\htdocs\CI4CRUD\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-12-30 20:53:33 --> syntax error, unexpected token "echo"
+#0 D:\xampp\htdocs\CI4CRUD\system\Router\Router.php(176): CodeIgniter\Router\Router->autoRoute('product')
+#1 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(718): CodeIgniter\Router\Router->handle('product')
+#2 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(359): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\CI4CRUD\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 D:\xampp\htdocs\CI4CRUD\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2021-12-30 20:53:52 --> move_uploaded_file(http://localhost:8080/uploads/1640919232-Screenshot_2.png): Failed to open stream: HTTP wrapper does not support writeable connections
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'move_uploaded_f...', 'D:\\xampp\\htdocs...', 59)
+#1 D:\xampp\htdocs\CI4CRUD\app\Controllers\Product.php(59): move_uploaded_file('D:\\xampp\\tmp\\ph...', 'http://localhos...')
+#2 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(824): App\Controllers\Product->uploada()
+#3 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#4 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\CI4CRUD\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 D:\xampp\htdocs\CI4CRUD\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2021-12-30 20:55:01 --> move_uploaded_file(http://localhost:8080/uploads/1640919301-Screenshot_2.png): Failed to open stream: HTTP wrapper does not support writeable connections
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'move_uploaded_f...', 'D:\\xampp\\htdocs...', 59)
+#1 D:\xampp\htdocs\CI4CRUD\app\Controllers\Product.php(59): move_uploaded_file('D:\\xampp\\tmp\\ph...', 'http://localhos...')
+#2 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(824): App\Controllers\Product->uploada()
+#3 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Product))
+#4 D:\xampp\htdocs\CI4CRUD\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 D:\xampp\htdocs\CI4CRUD\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 D:\xampp\htdocs\CI4CRUD\system\Commands\Server\rewrite.php(43): require_once('D:\\xampp\\htdocs...')
+#7 {main}
+ERROR - 2021-12-30 21:05:20 --> Table 'pos_db.image_uploads' doesn't exist

@@ -50,4 +50,14 @@ class Product extends Controller
         return redirect()->to('/product');
     }
 
+    public function uploada()
+    {
+        $uploadDir = base_url().'/uploads';
+        if (!empty($_FILES)) {
+        $tmpFile = $_FILES['file']['tmp_name'];
+        $filename = $uploadDir.'/'.time().'-'. $_FILES['file']['name'];
+        move_uploaded_file($tmpFile,$filename);
+        }
+    }
+
 }

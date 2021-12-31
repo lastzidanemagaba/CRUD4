@@ -22,6 +22,8 @@ $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
+$routes->get("image-upload", "DropzoneController::dropzone");
+$routes->post("dropzone/upload", "DropzoneController::dropzoneStore");
 
 /*
  * --------------------------------------------------------------------

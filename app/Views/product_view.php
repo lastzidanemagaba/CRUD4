@@ -45,11 +45,14 @@
     </div>
     
     <!-- Modal Add Product-->
+    <div class="container">
+  <div class="row">
+    <div class="col-md-12">
     <form action="<?= base_url('dropzone/upload') ?>" method="POST" enctype="multipart/form-data" class="dropzone" id='image-upload'>
-                    <div>
-                        <h3 class="text-center">Drag Here</h3>
-                    </div>
-                </form>
+    </form>
+    </div>
+  </div>
+</div>
     <form action="/product/save" method="post">
         <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -61,10 +64,13 @@
                 </button>
             </div>
             <div class="modal-body">
-           
-                <div class="form-group">
+            <div class="form-group">
                     <label>Customer</label>
-                    <input type="text" class="form-control" name="customer" placeholder="Nama Customer">
+                    <select name="customer" class="form-control">
+                        <option value="">-Pilih-</option>
+                        <option value="1">Asep</option>
+                        <option value="2">Asepso</option>
+                    </select>
                 </div>
                 
                 <div class="form-group">
@@ -123,20 +129,29 @@
             </div>
             <div class="modal-body">
             
-                <div class="form-group">
-                    <label>Product Name</label>
-                    <input type="text" class="form-control product_name" name="product_name" placeholder="Product Name">
+            <div class="form-group">
+                    <label>Customer</label>
+                    <input type="text" class="form-control customer" name="customer" placeholder="Nama Customer">
                 </div>
                 
                 <div class="form-group">
-                    <label>Price</label>
-                    <input type="text" class="form-control product_price" name="product_price" placeholder="Product Price">
+                    <label>No HP</label>
+                    <input type="text" class="form-control nohp" name="nohp" placeholder="No HP">
                 </div>
 
                 <div class="form-group">
-                    <label>Category</label>
+                    <label>Alamat</label>
+                    <input type="text" class="form-control alamat" name="alamat" placeholder="Alamat" >
+                </div>
+
+                <div class="form-group">
+                    <label>Deskripsi</label>
+                    <input type="text" class="form-control deskripsi" name="deskripsi" placeholder="Deskripsi">
+                </div>
+                <div class="form-group">
+                    <label>Kategori</label>
                     <select name="product_category" class="form-control product_category">
-                        <option value="">-Select-</option>
+                        <option value="">-Pilih-</option>
                         <?php foreach($category as $row):?>
                         <option value="<?= $row->category_id;?>"><?= $row->category_name;?></option>
                         <?php endforeach;?>
@@ -182,24 +197,31 @@
     </form>
     <!-- End Modal Delete Product-->
 
-<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/bootstrap.bundle.min.js"></script>
 <script>
+   Dropzone.options.imageUpload = {
+            maxFilesize: 1,
+            acceptedFiles: ".jpeg,.jpg,.png,.gif",
+        };
     $(document).ready(function(){
 
         // get Edit Product
         $('.btn-edit').on('click',function(){
             // get data from button edit
             const id = $(this).data('id');
-            const name = $(this).data('name');
-            const price = $(this).data('price');
+            const customer = $(this).data('customer');
+            const nohp = $(this).data('nohp');
+            const alamat = $(this).data('alamat');
+            const deskripsi = $(this).data('deskripsi');
             const category = $(this).data('category_id');
             // Set data to Form Edit
-            $('.product_id').val(id);
-            $('.product_name').val(name);
-            $('.product_price').val(price);
+            $('.customer').val(customer);
+            $('.nohp').val(nohp);
+            $('.alamat').val(alamat);
+            $('.deskripsi').val(deskripsi);
             $('.product_category').val(category).trigger('change');
             // Call Modal Edit
             $('#editModal').modal('show');
